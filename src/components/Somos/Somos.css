@@ -1,0 +1,16 @@
+.somos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  text-align: center;
+  background-color: #f0f0f0;
+}
+.somos h2 {
+  margin-bottom: 1rem;
+}
+.somos p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}

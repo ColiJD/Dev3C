@@ -1,0 +1,45 @@
+.banner {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff; /* Opcional: fondo claro para resaltar sombra */
+}
+
+.banner-content {
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  background-color: #fff; /* Fondo blanco para que la sombra destaque */
+  border-radius: 12px; /* Esquinas suaves (opcional) */
+}
+
+.banner-content h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  margin: 0;
+  color: var(--foreground);
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3); /* Sombra para que resalte el texto */
+}
+
+/* Imagen responsiva con sombra suave */
+.banner-content img,
+.banner-content .next-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+.banner-content p {
+ display: none; /* Ocultar el párrafo por defecto */
+}
+
+@media (min-width: 620px) {
+  .banner {
+    
+  }
+}
