@@ -14,3 +14,9 @@
   font-size: 1.2rem;
   line-height: 1.5;
 }
+
+@media (min-width: 1024px) {
+  .somos p {
+    max-width: 80%;
+  }
+}

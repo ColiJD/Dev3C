@@ -68,12 +68,14 @@
     flex-direction: row;
     gap: 2rem;
     max-width: none;
+    
   }
 
   .nav-item {
     background-color: transparent;
     box-shadow: none;
     font-size: 1rem;
+    margin: 0 ;
   }
 
   .nav-item a {

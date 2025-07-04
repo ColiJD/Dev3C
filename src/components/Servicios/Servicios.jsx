@@ -1,10 +1,10 @@
 import "./servicios.css";
 import Image from "next/image";
-import movil from "@/app/assets/img/appMovil.jpg";
-import web from "@/app/assets/img/pageWeb.jpg";
+import movil from "@/app/assets/img/appMovil.webp";
+import web from "@/app/assets/img/pageWeb.webp";
 export function Servicios() {
   return (
-    <section className="servicios">
+    <section className="servicios" id="servicios">
       <h2 className="titulo">Servicios</h2>
       <p className="subtitulo">
         En Dev3C ofrecemos una amplia gama de servicios para satisfacer las

@@ -35,11 +35,20 @@
   margin: 0 auto;
 }
 .banner-content p {
- display: none; /* Ocultar el párrafo por defecto */
+  display: none; /* Ocultar el párrafo por defecto */
 }
 
-@media (min-width: 620px) {
-  .banner {
-    
+@media (min-width: 1024px) {
+  .banner-content img,
+  .banner-content .next-image {
+    max-height: 90vh;
+    object-fit: cover; /* Mantiene la proporción de la imagen */
   }
 }
+@media (min-width: 1440px) {
+  .banner-content img,
+  .banner-content .next-image {
+    border-radius: 12px; /* Esquinas suaves (opcional) */
+  }
+}
+

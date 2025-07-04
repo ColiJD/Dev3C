@@ -8,10 +8,13 @@ import "./header.css";
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const handleLinkClick = () => setMenuOpen(false);
+
   const menuUno = [
     { href: "/", title: "Inicio" },
-    { href: "/practicas", title: "Practicas" },
-    { href: "/contacto", title: "Contacto" },
+    { href: "#servicios", title: "Servicios" },
+    { href: "#equipo", title: "Equipo" },
+    { href: "#somos", title: "Sobre Nosotros" },
+    { href: "#contacto", title: "Contacto" },
   ];
 
   // const menuDos = [
@@ -21,7 +24,7 @@ export function Header() {
   // ];
 
   return (
-    <header className="header">
+    <header className="header" id="inicio">
       <div>
         <Link href="/">
           <section className="logo">

@@ -44,6 +44,7 @@
   }
 .header div{
   width: 20%;
+  border-bottom: none;
 } 
   .hamburger {
     display: none;

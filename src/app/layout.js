@@ -2,7 +2,6 @@ import { Roboto, Montserrat } from "next/font/google";
 import { Header } from "@/components/Header/Header";
 import "../style/globals.css";
 
-
 const getRoboto = Roboto({
   variable: "--font-roboto",
   subsets: ["latin"],
@@ -19,11 +18,21 @@ export const metadata = {
   title: "Dev3C",
   description: "Startup de ingeniería y tecnología",
   icons: {
-    icon: "/logo.ico",
-    apple: "/logo.jpg",
-    shortcut: "/logo.jpg",
+    icon: "/DEV.ico",
+    apple: "/DEV.jpg",
+    shortcut: "/DEV.jpg",
   },
-  keywords: ["ingeniería", "tecnología", "software", "web", "móvil", "startup", "Dev3C", "desarrollo web", "aplicaciones móviles"],
+  keywords: [
+    "ingeniería",
+    "tecnología",
+    "software",
+    "web",
+    "móvil",
+    "startup",
+    "Dev3C",
+    "desarrollo web",
+    "aplicaciones móviles",
+  ],
   openGraph: {
     title: "Dev3C",
     description: "Startup de ingeniería y tecnología",
@@ -31,7 +40,7 @@ export const metadata = {
     siteName: "Dev3C",
     images: [
       {
-        url: "/logo.jpg",
+        url: "/DEV.webp",
         width: 1200,
         height: 630,
         alt: "Dev3C - Startup de ingeniería y tecnología",
@@ -42,12 +51,14 @@ export const metadata = {
   },
 };
 
+import { Footer } from "@/components/footer/Footer";
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${getRoboto.variable} ${getMontserrat.variable}`}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

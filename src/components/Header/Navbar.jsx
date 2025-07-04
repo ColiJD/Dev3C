@@ -8,9 +8,9 @@ export function Navbar({ items, menuOpen, onLinkClick }) {
       <ul className="nav-items">
         {items.map((item) => (
           <li className="nav-item" key={item.href}>
-            <Link href={item.href} onClick={onLinkClick}>
+            <a href={item.href} onClick={onLinkClick}>
               {item.title}
-            </Link>
+            </a>
           </li>
         ))}
       </ul>

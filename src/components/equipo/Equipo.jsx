@@ -1,14 +1,14 @@
 import Image from "next/image";
-import osman from "@/app/assets/img/osmanTitulo.jpg";
-import coli from "@/app/assets/img/coli.jpg";
-import edgar from "@/app/assets/img/edgar.jpg";
-import alex from "@/app/assets/img/alex.jpg";
-import leo from "@/app/assets/img/alex.jpg";
+import osman from "@/app/assets/img/osmanTitulo.webp";
+import coli from "@/app/assets/img/coli.webp";
+import edgar from "@/app/assets/img/edgar.webp";
+import alex from "@/app/assets/img/alex.webp";
+
 
 import "./equipo.css";
 export function Equipo() {
   return (
-    <div className="container-equipo">
+    <div className="container-equipo" id="equipo">
       <h2 className="titulo">Equipo de Trabajo</h2>
       <p className="subtitulo">Conozca la comunidad detrás de la iniciativa.</p>
       <div className="card-container">

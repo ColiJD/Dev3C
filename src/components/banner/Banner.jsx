@@ -1,5 +1,5 @@
 import Image from "next/image";
-import banner from "@/app/assets/img/banner.jpg";
+import banner from "@/app/assets/img/banner.webp";
 import "./banner.css";
 
 export function Banner() {
