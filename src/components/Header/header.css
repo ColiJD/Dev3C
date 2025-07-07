@@ -42,11 +42,15 @@
     justify-content: space-around;
     align-items: center;
   }
-.header div{
-  width: 20%;
-  border-bottom: none;
-} 
+  .logo {
+  font-size: 1.1rem;
+}
+  .header div {
+    width: 30%;
+    border-bottom: none;
+  }
   .hamburger {
     display: none;
   }
+  
 }

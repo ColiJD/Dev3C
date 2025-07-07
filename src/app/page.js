@@ -9,7 +9,6 @@ export default function Home() {
       <Banner />
       <Somos />
       <Servicios />
-      <Equipo />
     </main>
   );
 }

@@ -28,7 +28,7 @@ export function Header() {
       <div>
         <Link href="/">
           <section className="logo">
-            <span>Dev</span> <span>3C</span>
+            <span>Dev3C</span> <span>Solutions</span>
           </section>
         </Link>
         <button

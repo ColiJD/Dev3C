@@ -23,6 +23,7 @@
 }
 
 .nav-items {
+  
   display: flex;
   flex-direction: column;
   list-style: none;
@@ -62,12 +63,14 @@
     box-shadow: none;
     opacity: 1 !important;
     pointer-events: auto !important;
+    padding-left: 0;
   }
 
   .nav-items {
     flex-direction: row;
-    gap: 2rem;
+    gap: 1rem;
     max-width: none;
+    
     
   }
 

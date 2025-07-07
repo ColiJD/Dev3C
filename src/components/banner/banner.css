@@ -1,54 +1,135 @@
 .banner {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #fff; /* Opcional: fondo claro para resaltar sombra */
-}
-
-.banner-content {
-  max-width: 1200px;
-  width: 100%;
-  text-align: center;
   position: relative;
-  background-color: #fff; /* Fondo blanco para que la sombra destaque */
-  border-radius: 12px; /* Esquinas suaves (opcional) */
+  width: 100%;
+  height: 87vh;
+  min-height: 87vh;
+  color: var(--foreground);
+  background: linear-gradient(135deg, rgb(13, 21, 37) 0%, rgb(1, 77, 116) 100%);
+  clip-path: ellipse(140% 100% at 80% 50%);
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 
-.banner-content h1 {
+.banner-container {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+.banner-left {
+  width: 50%;
+  height: 80%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  margin-left: 20px;
+}
+.banner-left p {
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.banner-right {
+  position: relative; /* Requerido para que fill funcione */
+  background-color: var(--foreground);
+  align-self: flex-start;
+  width: 50%;
+  height: 80%;
+  border-radius: 0% 0% 0% 100% / 0% 49% 0% 100%;
+  overflow: hidden; /* Recorta la imagen según la curva */
+}
+/* Borde curvo con pseudo-elemento */
+.banner-right::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 0% 0% 0% 100% / 0% 49% 0% 100%;
+  border-left: 5px solid white;
+  border-bottom: 5px solid white;
+  pointer-events: none;
+}
+
+.banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+.wave {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.wave svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.element {
   position: absolute;
   top: 50%;
   left: 50%;
+  width: 200px;
+  height: 200px;
+  background: url("../../app/assets/img/DEV.webp") no-repeat center center /
+    cover;
   transform: translate(-50%, -50%);
-  font-size: 4rem;
-  margin: 0;
-  color: var(--foreground);
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3); /* Sombra para que resalte el texto */
+  z-index: 10;
+  clip-path: circle(50% at 50% 50%);
+  border: 5px solid white;
+  border-radius: 50%;
 }
+@media (max-width: 768px) {
+  .banner-left {
+    width: 90%;
+    height: auto;
+    align-self: flex-start;
+    margin-top: 0px;
+    padding: 20px;
+    z-index: 20;
+    margin-left: 0;
+  }
 
-/* Imagen responsiva con sombra suave */
-.banner-content img,
-.banner-content .next-image {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-.banner-content p {
-  display: none; /* Ocultar el párrafo por defecto */
-}
-
-@media (min-width: 1024px) {
-  .banner-content img,
-  .banner-content .next-image {
-    max-height: 90vh;
-    object-fit: cover; /* Mantiene la proporción de la imagen */
+  .banner-right {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    margin: 0;
   }
 }
-@media (min-width: 1440px) {
-  .banner-content img,
-  .banner-content .next-image {
-    border-radius: 12px; /* Esquinas suaves (opcional) */
+@media (max-width: 480px) {
+  .banner-left {
+    padding: 10px;
+  }
+  .banner-left h1 {
+    font-size: 1.5rem;
+  }
+  .banner-left h3 {
+    font-size: 1rem;
+  }
+  .banner-left p {
+    font-size: 0.9rem;
+  }
+
+  .banner-right {
+    width: 150px;
+    height: 150px;
   }
 }
-
