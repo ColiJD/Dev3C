@@ -1,24 +1,45 @@
+"use client";
+
 import Image from "next/image";
+import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
+import { useEffect } from "react";
 import banner from "@/app/assets/img/l3.jpg";
 import "./banner.css";
 
 export function Banner() {
+  const { ref, inView } = useInView({ threshold: 0.5, triggerOnce: false });
+
   return (
-    <section className="banner">
+    <section className="banner" ref={ref}>
       <div className="banner-container">
-        <div className="banner-left">
+        <motion.div
+          className="banner-left"
+          initial={{ opacity: 0, x: -50 }}
+          animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+          transition={{ duration: 1 }}
+        >
           <h1 className="titulo">Dev3C Solutions</h1>
-          <h3 className="">Tecnología que conecta, crea y transforma.</h3>
+          <h3>Tecnología que conecta, crea y transforma.</h3>
           <p>
-            Desarrollamos soluciones digitales personalizadas para empresas,
-            emprendedores y personas que buscan crecer en el mundo digital.
+            Te ayudamos a tener presencia real en el mundo digital. Crea tu
+            página web profesional o aplicación móvil funcional; somos el equipo
+            que puede convertir tu idea en una plataforma lista para crecer.
           </p>
+          <p>Tu idea ya no puede esperar. Con Dev3C, la hacemos posible.</p>
           <button className="btn">CLICK HERE</button>
-        </div>
-        <div className="banner-right">
+        </motion.div>
+
+        <motion.div
+          className="banner-right"
+          initial={{ opacity: 0, x: 50 }}
+          animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+          transition={{ duration: 1 }}
+        >
           <Image src={banner} alt="Banner" className="banner-image" priority />
-        </div>
+        </motion.div>
       </div>
+
       <div className="wave">
         <svg
           viewBox="0 0 500 150"
@@ -32,7 +53,6 @@ export function Banner() {
           />
         </svg>
       </div>
-      {/* <div className="element"></div> */}
     </section>
   );
 }
