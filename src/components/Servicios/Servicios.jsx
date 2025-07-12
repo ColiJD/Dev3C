@@ -1,39 +1,45 @@
+"use client";
+
 import "./servicios.css";
-import Image from "next/image";
-import movil from "@/app/assets/img/appMovil.webp";
-import web from "@/app/assets/img/pageWeb.webp";
+import { motion } from "framer-motion";
+import { serviciosItems } from "../Somos/somosData";
+import { ServiciosItem } from "./ServiciosItem";
+import { useInView } from "react-intersection-observer";
+
 export function Servicios() {
   return (
     <section className="servicios" id="servicios">
-      <h2 className="titulo">Servicios</h2>
-      <p className="subtitulo">
-        En Dev3C ofrecemos una amplia gama de servicios para satisfacer las
-        necesidades de nuestros clientes. Desde desarrollo web hasta soluciones
-        móviles, nuestro equipo está listo para llevar tu proyecto al siguiente
-        nivel.
-      </p>
       <div className="card-container">
-        <ServiciosCard
-          title="Desarrollo Web"
-          description="Creamos sitios web modernos y responsivos."
-          imagen={web}
-        />
-        <ServiciosCard
-          title="Soluciones Móviles"
-          description="Desarrollamos aplicaciones móviles para iOS y Android."
-          imagen={movil}
-        />
+        {serviciosItems.map((item, index) => (
+          <FadeInOnScroll key={index}>
+            <ServiciosItem
+              title={item.title}
+              text={item.text}
+              img={item.img}
+              reverse={index % 2 !== 0}
+            />
+          </FadeInOnScroll>
+        ))}
       </div>
     </section>
   );
 }
 
-export function ServiciosCard({ title, description, imagen }) {
+// 👇 Componente auxiliar para animación con scroll
+function FadeInOnScroll({ children }) {
+  const [ref, inView] = useInView({
+    threshold: 0.2,
+    triggerOnce: false,
+  });
+
   return (
-    <div className="servicios-card">
-      <h3>{title}</h3>
-      <p className="subtitulo">{description}</p>
-      <Image src={imagen} alt={title} />
-    </div>
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 80 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
+      {children}
+    </motion.div>
   );
 }

@@ -13,11 +13,6 @@ body {
   color: var(--primary-blue);
   background: var(--foreground);
   font-family: var(--font-roboto), sans-serif;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 1) 28%,
-    rgba(37, 77, 112, 1) 100%
-  );
 }
 
 * {

@@ -2,48 +2,99 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 20px;
-  color: var(--primary-blue);
-}
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-.servicios-card {
-  display: flex;
-  color: var(--foreground);
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--background);
-  border-radius: 10px;
-  padding: 20px;
-  margin: 10px;
-  max-width: 300px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-.servicios-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rema;
-}
-.servicios-card p {
-  font-size: 1rem;
   text-align: center;
-  margin-bottom: 0.75rem;
-}
-.servicios-card img {
-  width: 100px;
-  height: 100px;
-  margin-bottom: 10px;
-  border-radius: 50%;
-  object-fit: cover;
+  background-color: var(--primary-blue);
+  color: var(--foreground);
+  padding-top: 2rem;
 }
 
-@media (min-width: 1024px) {
-  .servicios p {
-    max-width: 80%;
+.servicios p {
+  width: 60%;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  scroll-snap-type: y mandatory;
+}
+.servicios-item > * {
+  padding: 1rem 2rem;
+}
+/* Servicios Item General */
+.servicios-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  scroll-snap-align: start;
+  scroll-snap-stop: always; /* ← fuerza el snap completo */
+}
+
+.servicios-item.reverse {
+  flex-direction: row-reverse;
+  background-color: var(--foreground);
+  color: var(--primary-blue);
+}
+
+.servicios-img-wrapper {
+  width: 50%;
+}
+
+.servicios-img-wrapper img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  filter: drop-shadow(6px 6px 10px rgba(0, 0, 0, 1.2));
+}
+
+.servicios-texto {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.servicios-texto p {
+  width: 90%;
+}
+
+/* Responsive: Móvil */
+@media (max-width: 480px) {
+  .servicios {
+    padding-top: 1rem;
+  }
+
+  .card-container {
+    height: auto;
+    overflow-y: visible;
+    scroll-snap-type: none;
+  }
+
+  .servicios-item {
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 1rem 0;
+  }
+  .servicios-img-wrapper {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .servicios-item.reverse {
+    flex-direction: column-reverse;
+  }
+
+  .servicios-img-wrapper,
+  .servicios-texto {
+    width: 100%;
+  }
+
+  .servicios p,
+  .servicios-texto p {
+    width: 90%;
   }
 }

@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
-import { useEffect } from "react";
 import banner from "@/app/assets/img/l3.jpg";
 import "./banner.css";
 
@@ -27,7 +26,14 @@ export function Banner() {
             que puede convertir tu idea en una plataforma lista para crecer.
           </p>
           <p>Tu idea ya no puede esperar. Con Dev3C, la hacemos posible.</p>
-          <button className="btn">CLICK HERE</button>
+          <motion.a
+            href="#contacto"
+            className="btn"
+            whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Contactanos
+          </motion.a>
         </motion.div>
 
         <motion.div
