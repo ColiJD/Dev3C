@@ -13,10 +13,13 @@
 }
 
 .card-container {
+  margin-top: 2rem;
   display: flex;
   flex-direction: column;
   width: 100%;
   scroll-snap-type: y mandatory;
+  justify-content: center;
+  align-items: center;
 }
 .servicios-item > * {
   padding: 1rem 2rem;
@@ -24,14 +27,17 @@
 /* Servicios Item General */
 .servicios-item {
   display: flex;
+  position: relative;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  overflow: visible;
   min-height: 100vh;
   width: 100%;
   scroll-snap-align: start;
   scroll-snap-stop: always; /* ← fuerza el snap completo */
 }
+
 
 .servicios-item.reverse {
   flex-direction: row-reverse;
@@ -85,6 +91,7 @@
     height: auto;
     overflow-y: visible;
     scroll-snap-type: none;
+    
   }
 
   .servicios-item {
