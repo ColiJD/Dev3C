@@ -8,7 +8,7 @@ export function ServiciosItem({ title, text, img, reverse }) {
   const controls = useAnimation();
   const [ref, inView] = useInView({
     triggerOnce: false, // solo se anima una vez
-    threshold: 0.3, // se activa cuando el 30% está visible
+    threshold: 0.2, // se activa cuando el 20% está visible
   });
   useEffect(() => {
     if (inView) {

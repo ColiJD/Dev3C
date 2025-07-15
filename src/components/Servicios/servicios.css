@@ -66,7 +66,7 @@
 .servicios p,
 .servicios-texto p {
   width: 90%;
-  font-size: 0.9rem; /* ← Ajusta el tamaño de fuente para móviles */
+  font-size: 1.2rem; /* ← Ajusta el tamaño de fuente para móviles */
   line-height: 1.8; /* ← Mejora la legibilidad */
   text-align: center; /* ← Centra el texto en móviles */
 }
@@ -106,7 +106,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0;
+    padding: 0 1.2rem;
   }
 
   .servicios-img-wrapper img {

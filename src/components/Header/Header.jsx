@@ -12,7 +12,6 @@ export function Header() {
   const menuUno = [
     { href: "/", title: "Inicio" },
     { href: "#servicios", title: "Servicios" },
-    { href: "#equipo", title: "Equipo" },
     { href: "#somos", title: "Sobre Nosotros" },
     { href: "#contacto", title: "Contacto" },
   ];
