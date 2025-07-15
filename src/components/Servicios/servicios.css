@@ -40,14 +40,20 @@
 }
 
 .servicios-img-wrapper {
-  width: 50%;
+  flex: 1;
+  overflow: hidden; /* ← esto recorta cualquier desborde */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .servicios-img-wrapper img {
   width: 100%;
-  height: auto;
-  object-fit: cover;
-  filter: drop-shadow(6px 6px 10px rgba(0, 0, 0, 1.2));
+  max-width: 100%;
+  height: auto; /* ← importante para mantener proporción */
+  max-height: 80vh; /* ← limita el tamaño para pantallas grandes */
+  object-fit: contain; /* ← o cover si prefieres recorte controlado */
+  filter: drop-shadow(6px 6px 10px rgba(0, 0, 0, 0.5)); /* ← reduje opacidad */
 }
 
 .servicios-texto {
@@ -57,9 +63,16 @@
   justify-content: center;
   align-items: center;
 }
-
+.servicios p,
 .servicios-texto p {
   width: 90%;
+  font-size: 0.9rem; /* ← Ajusta el tamaño de fuente para móviles */
+  line-height: 1.8; /* ← Mejora la legibilidad */
+  text-align: center; /* ← Centra el texto en móviles */
+}
+.servicios h3.subtitulo {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 /* Responsive: Móvil */
@@ -78,23 +91,42 @@
     flex-direction: column;
     min-height: 100vh;
     padding: 1rem 0;
-  }
-  .servicios-img-wrapper {
-    padding-top: 0;
-    padding-bottom: 0;
+    justify-content: center;
+    align-items: center;
   }
 
   .servicios-item.reverse {
     flex-direction: column-reverse;
   }
 
-  .servicios-img-wrapper,
+  .servicios-img-wrapper {
+    width: 100%;
+    height: auto; /* ← No fije height para permitir que la imagen defina */
+    max-height: 50vh; /* ← Limita el tamaño visible */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+
+  .servicios-img-wrapper img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 50vh; /* ← Controla el tamaño sin recorte */
+    object-fit: contain; /* ← Muestra la imagen completa */
+  }
+
   .servicios-texto {
     width: 100%;
+    padding: 1.2rem;
   }
 
   .servicios p,
   .servicios-texto p {
-    width: 90%;
+    width: 100%;
+    font-size: 0.9rem; /* ← Ajusta el tamaño de fuente para móviles */
+    line-height: 1.8; /* ← Mejora la legibilidad */
+    text-align: center; /* ← Centra el texto en móviles */
   }
 }
