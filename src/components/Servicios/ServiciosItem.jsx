@@ -1,36 +1,22 @@
 import Image from "next/image";
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import "./servicios.css";
 import { useEffect } from "react";
+import "./servicios.css";
 
 export function ServiciosItem({ title, text, img, reverse }) {
-  const controls = useAnimation();
   const [ref, inView] = useInView({
-    triggerOnce: false, // solo se anima una vez
-    threshold: 0.2, // se activa cuando el 20% está visible
+    threshold: 0.4,
+    triggerOnce: false,
   });
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [inView, controls]);
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
-    },
-  };
   return (
     <motion.div
       ref={ref}
       className={`servicios-item ${reverse ? "reverse" : ""}`}
-      initial="hidden"
-      animate={controls}
-      variants={itemVariants}
+      initial={{ opacity: 0, y: 40 }}
+      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <div className="servicios-img-wrapper">
         <Image src={img} alt={title} className="servicios-img" />
