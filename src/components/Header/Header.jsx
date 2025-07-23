@@ -13,6 +13,7 @@ export function Header() {
     { href: "/", title: "Inicio" },
     { href: "#servicios", title: "Servicios" },
     { href: "#somos", title: "Sobre Nosotros" },
+    { href: "#proyectos", title: "Proyectos" },
     { href: "#contacto", title: "Contacto" },
   ];
 

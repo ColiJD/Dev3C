@@ -60,6 +60,18 @@ export function Footer() {
                 Sobre Nosotros <FaArrowUpRightFromSquare />
               </motion.a>
             </li>
+            <li>
+              <motion.a
+                href="#proyectos"
+                variants={linkVariants}
+                initial="initial"
+                animate="animate"
+                whileHover="whileHover"
+                whileTap="whileTap"
+              >
+                Proyectos <FaArrowUpRightFromSquare />
+              </motion.a>
+            </li>
           </ul>
         </nav>
 
@@ -74,7 +86,7 @@ export function Footer() {
               whileHover="whileHover"
               whileTap="whileTap"
             >
-              developers3c@gmail.com <FaArrowUpRightFromSquare />
+              colindresj9@gmail.com <FaArrowUpRightFromSquare />
             </motion.a>
           </p>
           <p>
